@@ -4,6 +4,9 @@ CREATE DATABASE universidad
 
 USE universidad;
 
+-- Para saber como fueron creadas
+SHOW CREATE TABLE materias;
+
 CREATE TABLE profesores(
     id_profesor INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
