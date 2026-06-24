@@ -7,6 +7,11 @@
 
 USE universidad;
 
+
+-- SHOW CREATE TABLE.... muestra como fue creada la tabla, 
+--en este caso necesitamos ver las constraints creadas automaticamente
+--al hacer las referencias de fk, de integridad referencial, para
+--borrarlas manualmente y cambiarlas.
 SHOW CREATE TABLE materias;
 
 SELECT * FROM profesores;
@@ -55,3 +60,38 @@ WHERE id_profesor = 1;
 UPDATE profesores
 SET id_profesor = 10
 WHERE id_profesor = 3;
+
+-- Tabla inscripciones
+-- Se va a agregar la restricción ON DELETE CASCADE para que
+--si se borra un alumno, todas las inscripciones suyas se borren
+--ya que no nos sirve tener esos datos huérfanos.
+-- NO va ON UPDATE CASCADE porque no tiene sentido que le cambiemos
+--el id a un alumno. Directamente si no va, lo borramos.
+
+
+
+-- SHOW CREATE TABLE.... muestra como fue creada la tabla, 
+--en este caso necesitamos ver las constraints creadas automaticamente
+--al hacer las referencias de fk, de integridad referencial, para
+--borrarlas manualmente y cambiarlas.
+SHOW CREATE TABLE inscripciones;
+
+-- Eliminamos la constraint creada por mysql, que es: inscripciones_ibfk_1
+--entre la tabla inscripciones, y la tabla alumnos
+ALTER TABLE inscripciones
+DROP FOREIGN KEY inscripciones_ibfk_1 ;
+
+--esta constraint, es de TIPO foreign key. NO es la foreign key.
+
+ALTER table inscripciones
+ADD CONSTRAINT fk_inscripciones_alumnos
+FOREIGN KEY (id_alumno)
+REFERENCES alumnos(id_alumno)
+ON DELETE CASCADE;
+
+SELECT * FROM alumnos;
+
+SELECT * FROM inscripciones;
+
+DELETE FROM alumnos
+WHERE id_alumno = 2;
