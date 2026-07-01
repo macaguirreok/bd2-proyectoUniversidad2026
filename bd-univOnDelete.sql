@@ -95,3 +95,29 @@ SELECT * FROM inscripciones;
 
 DELETE FROM alumnos
 WHERE id_alumno = 2;
+
+-- Ahora borramos la segunda constraint creada automaticamente por mysql
+-- referida a la tabla materias
+
+ALTER table inscripciones 
+DROP FOREIGN KEY inscripciones_ibfk_2;
+
+-- Ahora escribimos la restricción manualmente, o sea que va a suceder
+-- con inscripción, si se borra una materia
+
+-- ON DELETE RESTRICT: no se puede eliminar materias, cuando ya
+-- tengan inscripciones realizadas.
+
+ALTER TABLE inscripciones
+ADD CONSTRAINT fk_inscripciones_materias
+FOREIGN KEY (id_materia)
+REFERENCES materias(id_materia)
+ON DELETE RESTRICT;
+
+-- Ahora solo nos fijamos si funciona
+
+SELECT * FROM materias;
+
+DELETE FROM materias
+WHERE id_materia = 2;
+
