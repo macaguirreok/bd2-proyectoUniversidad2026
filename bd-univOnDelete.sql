@@ -121,3 +121,31 @@ SELECT * FROM materias;
 DELETE FROM materias
 WHERE id_materia = 2;
 
+
+-- Tabla notas
+-- ON DELETE CASCADE
+
+-- a: buscar como se llama la restricción automática que se hace
+--cuando haces la relación entre dos tablas al crearlas
+
+SHOW CREATE TABLE notas;
+
+-- b : borrar la restricción automática
+
+ALTER TABLE notas
+DROP FOREIGN KEY notas_ibfk_1;
+
+-- c : Agregar la restricción
+
+ALTER TABLE notas
+ADD CONSTRAINT fk_notas_inscripcion
+FOREIGN KEY (id_inscripcion)
+REFERENCES inscripciones(id_inscripcion)
+ON DELETE CASCADE;
+
+-- D: probar que funcione
+
+SELECT * FROM notas;
+
+DELETE FROM inscripciones
+WHERE id_inscripcion = 1;
