@@ -149,3 +149,16 @@ SELECT * FROM notas;
 
 DELETE FROM inscripciones
 WHERE id_inscripcion = 1;
+
+
+-- ON UPDATE
+--
+-- En este proyecto solo se implementó ON UPDATE CASCADE
+-- en la relación Profesores → Materias para comprender
+-- el funcionamiento de la actualización automática
+-- de claves foráneas.
+--
+-- En el resto de las relaciones no se agregó ON UPDATE
+-- ya que los identificadores (PRIMARY KEY) representan
+-- claves internas del sistema y no deberían modificarse
+-- durante la vida útil de los registros.
