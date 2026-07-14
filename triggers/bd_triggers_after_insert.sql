@@ -66,6 +66,13 @@ NEW.nota, --> NEW es una "foto de la fila recien creada de id_inscripcion y de n
 'INSERT' --> es OTRA manera de hacer un insert. En vez de VALUES(...) , al poner 'INSERT' despues de NEW.nota,
 -- significa: "Insertá lo que devuelva esta consulta" (que no olvidemos que es un select)
 
+-- ¿Por qué vamos a buscar la info en INSCRIPCIONES I ? 
+-- Porque la tabla notas, al no tener a a.nombre en NEW, decimos bueno, notas tiene id_inscripcion
+-- vamos a la tabla inscripciónes, ¿y por que no empezamos por la tabla alumnos directamente?
+-- poruq notas, no sabe quien es el alumno, solo sabe id_inscripcion.
+
+-- No empiezo los JOIN desde la tabla que quiero, sino desde la tabla que conozco.
+
 FROM inscripciones i --> empezamos con inscripciones, porque nota conoce solo id_inscripcion de la tabla inscripciones.
 INNER JOIN alumnos a --> el orden de hacer los inner join con alumnos y materias hubiera sido indistinto.
 ON i.id_alumno = a.id_alumno
