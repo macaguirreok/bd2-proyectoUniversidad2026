@@ -1,0 +1,188 @@
+TP N.º 1 - Consultas SQL
+
+Nivel 1 (calentamiento)
+Ejercicio 1
+
+Mostrar todos los alumnos.
+
+Ejercicio 2
+
+Mostrar solamente el nombre de todos los alumnos.
+
+Ejercicio 3
+
+Mostrar todos los profesores ordenados alfabéticamente.
+
+Ejercicio 4
+
+Mostrar todas las materias.
+
+Ejercicio 5
+
+Mostrar solamente las notas mayores a 8.
+
+Nivel 2 (WHERE)
+Ejercicio 6
+
+Mostrar todos los alumnos mayores de 25 años.
+
+Ejercicio 7
+
+Mostrar todas las notas entre 7 y 9.
+
+Ejercicio 8
+
+Mostrar todas las inscripciones del año 2026.
+
+Ejercicio 9
+
+Mostrar todas las materias cuyo nombre empiece con "P".
+
+Ejercicio 10
+
+Mostrar todas las notas ordenadas de mayor a menor.
+
+Nivel 3 (JOIN)
+
+Acá empieza lo lindo.
+
+Ejercicio 11
+
+Mostrar
+
+nombre del alumno
+nota
+Ejercicio 12
+
+Mostrar
+
+alumno
+materia
+Ejercicio 13
+
+Mostrar
+
+alumno
+materia
+profesor
+Ejercicio 14
+
+Mostrar
+
+alumno
+materia
+nota
+Ejercicio 15
+
+Mostrar
+
+alumno
+materia
+profesor
+nota
+Nivel 4 (Funciones)
+Ejercicio 16
+
+Mostrar la nota máxima.
+
+Ejercicio 17
+
+Mostrar la nota mínima.
+
+Ejercicio 18
+
+Mostrar el promedio de todas las notas.
+
+Ejercicio 19
+
+Mostrar cuántos alumnos existen.
+
+Ejercicio 20
+
+Mostrar cuántas materias existen.
+
+Nivel 5 (GROUP BY)
+Ejercicio 21
+
+Mostrar
+
+alumno
+cantidad de materias en las que está inscripto.
+Ejercicio 22
+
+Mostrar
+
+profesor
+cantidad de materias que dicta.
+Ejercicio 23
+
+Mostrar
+
+materia
+cantidad de alumnos inscriptos.
+Ejercicio 24
+
+Mostrar
+
+alumno
+promedio de notas.
+Ejercicio 25
+
+Mostrar
+
+materia
+promedio de notas.
+Nivel 6 (HAVING)
+Ejercicio 26
+
+Mostrar los alumnos cuyo promedio sea mayor a 8.
+
+Ejercicio 27
+
+Mostrar las materias cuyo promedio sea mayor a 9.
+
+Ejercicio 28
+
+Mostrar las materias que tengan más de un alumno.
+
+Nivel 7 (Subconsultas)
+Ejercicio 29
+
+Mostrar el alumno con la nota más alta.
+
+Ejercicio 30
+
+Mostrar todas las notas mayores que el promedio general.
+
+Ejercicio 31
+
+Mostrar las materias que todavía no tienen notas.
+
+Nivel 8 (Desafíos)
+
+Estos son parecidos a cosas que podrían pedirte en un trabajo.
+
+Ejercicio 32
+
+Armar un listado así:
+
+| Alumno | Materia | Profesor | Nota | Estado |
+
+Donde
+
+Nota >= 6 → "Aprobado"
+Nota < 6 → "Desaprobado"
+
+(Pista: CASE).
+
+Ejercicio 33
+
+Mostrar el ranking de alumnos según su promedio.
+
+Ejercicio 34
+
+Mostrar el profesor cuyos alumnos tienen el mejor promedio.
+
+Ejercicio 35
+
+Mostrar el alumno que cursa más materias.

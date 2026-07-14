@@ -58,13 +58,16 @@ INSERT INTO historial_notas(
 
 SELECT --> yo esperaba algo como INSERT INTO historial_notas VALUES(...), pero ¿De donde se sacaría el nombre del alumno?
 -- Estamos trayendo o seleccionando los datos desde el verdadero insert de notas.
+
+-- Si los valores los escribo yo, va values. Si los valores se obtienen de
+-- una consulta, va select.
+
 NOW(),
 a.nombre,
 m.nombre,
 NEW.nota, --> NEW es una "foto de la fila recien creada de id_inscripcion y de nota"
 -- al hacer NEW.nota la estamos trayendo de ahí a la nota de la fila recién insertada. Esto del NEW lo hace mysql.
-'INSERT' --> es OTRA manera de hacer un insert. En vez de VALUES(...) , al poner 'INSERT' despues de NEW.nota,
--- significa: "Insertá lo que devuelva esta consulta" (que no olvidemos que es un select)
+'INSERT' --> es la frase que va en la columna de acción, solo como varchar
 
 -- ¿Por qué vamos a buscar la info en INSCRIPCIONES I ? 
 -- Porque la tabla notas, al no tener a a.nombre en NEW, decimos bueno, notas tiene id_inscripcion
